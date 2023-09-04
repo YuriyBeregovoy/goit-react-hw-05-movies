@@ -1,3 +1,5 @@
+import { NavLink, Route, Routes } from "react-router-dom";
+
 export const App = () => {
 
   // const KEY = '18e447cd4ab696665fa7fbc918675bb1';
@@ -8,7 +10,14 @@ export const App = () => {
 
   return (
     <div>
-    
+      <nav>
+        <NavLink>Home</NavLink>
+        <NavLink>Movies</NavLink>
+      </nav>
+      <Routes>
+        <Route path="/" element={<div></div>}/>
+        <Route  path="/movies" element={<div></div>}/>
+      </Routes>
     </div>
   );
 };
