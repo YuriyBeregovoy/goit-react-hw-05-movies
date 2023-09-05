@@ -11,8 +11,8 @@ export const App = () => {
   return (
     <div>
       <nav>
-        <NavLink>Home</NavLink>
-        <NavLink>Movies</NavLink>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/movies">Movies</NavLink>
       </nav>
       <Routes>
         <Route path="/" element={<div></div>}/>
