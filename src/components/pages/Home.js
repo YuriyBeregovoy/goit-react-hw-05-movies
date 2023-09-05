@@ -11,7 +11,7 @@ const Home = () => {
 
       try {
    
-        const response = await axios.get("https://api.themoviedb.org/3/trending/movie/week?api_key=18e447cd4ab696665fa7fbc918675bb1");
+        const response = await axios.get("https://api.themoviedb.org/3/trending/movie/day?api_key=18e447cd4ab696665fa7fbc918675bb1");
 
         console.log(response.data.results);
         const trendingMoviesArray = response.data.results;
@@ -27,9 +27,16 @@ const Home = () => {
 
 
 
-  return (<div>{trendingMoviesArrea.map(movie => {
-    return <div key={movie.id}>{movie.title}</div> 
-  })}</div>)
+  return (
+    <main>
+      <h1>Trending today</h1>
+      <div>
+      {trendingMoviesArrea.map(movie => {
+      return <div key={movie.id}>{movie.title}</div> 
+      })}
+    </div>
+    </main>
+  )
 }
 
 export default Home;
