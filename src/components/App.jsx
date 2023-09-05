@@ -15,8 +15,12 @@ export const App = () => {
         <NavLink to="/movies">Movies</NavLink>
       </nav>
       <Routes>
-        <Route path="/" element={<div></div>}/>
-        <Route  path="/movies" element={<div></div>}/>
+        <Route path="/" element={<div>Home</div>}/>
+        <Route path="/movies" element={<div>Movies</div>} />
+        <Route path="/movies/:movieId" element={<div>MovieDetails</div>}>
+          <Route path="/movies/:movieId/cast" element={<div>Cast</div>} />
+          <Route path="/movies/:movieId/reviews" element={<div>Reviews</div>} />
+        </Route>
       </Routes>
     </div>
   );
