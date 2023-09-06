@@ -31,11 +31,11 @@ const Home = () => {
   return (
     <main>
       <h1>Trending today</h1>
-      <div>
+      <ul>
       {trendingMoviesArray.map(movie => {
-      return <Link key={movie.id} to={`${movie.id}`}>{movie.title}</Link> 
+      return <li key={movie.id}><Link  to={`${movie.id}`}>{movie.title}</Link></li> 
       })}
-    </div>
+    </ul>
     </main>
   )
 }
