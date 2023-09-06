@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
-// import Notiflix from 'notiflix';
+import Notiflix from 'notiflix';
 import { Link } from "react-router-dom";
 
 
@@ -46,7 +46,7 @@ const Movies = () => {
         evt.preventDefault();
         const searchQuery = evt.target.elements.query.value.trim();
         if (searchQuery) { changeQuery(searchQuery); } else {
-          // Notiflix.Notify.failure('Please enter a valid search query.');
+          Notiflix.Notify.failure('Please enter a valid search query.');
         }
         evt.target.reset();
       }}>
