@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+// import { useEffect, useState } from "react";
+// import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const MovieDetails = () => {
 
 
-
-
+  const params = useParams();
+  console.log(params);
   //  const [trendingMoviesArrea, setTrendingMoviesArrea] = useState([]);
 
 
