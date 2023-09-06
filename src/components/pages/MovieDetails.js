@@ -6,7 +6,7 @@ const MovieDetails = () => {
 
 
 
-//  const [trendingMoviesArrea, setTrendingMoviesArrea] = useState([]);
+  //  const [trendingMoviesArrea, setTrendingMoviesArrea] = useState([]);
 
 
   // useEffect(() => {
@@ -33,10 +33,10 @@ const MovieDetails = () => {
   return (
     <main>
       <div>
-     
-    </div>
+        MovieDetails
+      </div>
     </main>
   )
-}
+};
 
 export default MovieDetails;
