@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 const Home = () => {
@@ -32,7 +33,7 @@ const Home = () => {
       <h1>Trending today</h1>
       <div>
       {trendingMoviesArrea.map(movie => {
-      return <div key={movie.id}>{movie.title}</div> 
+      return <Link key={movie.id} to={`${movie.id}`}>{movie.title}</Link> 
       })}
     </div>
     </main>
