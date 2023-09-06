@@ -6,27 +6,37 @@ import { Link } from "react-router-dom";
 
 
 const Movies = () => {
- const [trendingMoviesArrea, setTrendingMoviesArrea] = useState([]);
-
+ const [searchMoviesArray, setSearchMoviesArray] = useState([]);
+  const [searchQuery, setsearchQuery] = useState("");
+  
+  const changeQuery = (newQuery) => {
+    if (newQuery !== "") {
+      setsearchQuery(newQuery);
+      setSearchMoviesArray([]);
+    }
+  };
 
   useEffect(() => {
-   const fetchMovies = async (searchQuery) => {
+    const fetchMovies = async () => {
+      if (searchQuery) {
 
-      try {
+        try {
    
-        const response = await axios.get(`https://api.themoviedb.org/3/search/movie?query=${searchQuery}&include_adult=false&language=en-US&page=1&api_key=18e447cd4ab696665fa7fbc918675bb1`);
+          const response = await axios.get(`https://api.themoviedb.org/3/search/movie?query=${searchQuery}&include_adult=false&language=en-US&page=1&api_key=18e447cd4ab696665fa7fbc918675bb1`);
 
-        console.log(response.data.results);
-        const trendingMoviesArray = response.data.results;
-        setTrendingMoviesArrea(trendingMoviesArray);
+          console.log(response.data.results);
+          const searchMoviesArray = response.data.results;
+          setSearchMoviesArray(searchMoviesArray);
 
-      } catch (error) {
-        console.error("Помилка при отриманні даних:", error);
-        throw error;
+        } catch (error) {
+          console.error("Помилка при отриманні даних:", error);
+          throw error;
+        }
       }
+     
     }
-    fetchMovies();
-    }, []);
+     fetchMovies();
+    }, [searchQuery]);
 
 
 
@@ -44,11 +54,11 @@ const Movies = () => {
           <button type="submit">Search</button>
       </form>
        <ul>
-          <li>
-        {trendingMoviesArrea.map(movie => {
-        return <Link key={movie.id} to={`${movie.id}`}>{movie.title}</Link> 
+          
+        {searchMoviesArray.map(movie => {
+        return <li key={movie.id}><Link to={`${movie.id}`}>{movie.title}</Link></li> 
         })}
-          </li>
+          
       </ul>
     </main>
   )
