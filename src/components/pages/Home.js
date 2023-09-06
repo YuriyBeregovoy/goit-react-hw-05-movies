@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const Home = () => {
- const [trendingMoviesArrea, setTrendingMoviesArrea] = useState([]);
+ const [trendingMoviesArray, setTrendingMoviesArray] = useState([]);
 
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const Home = () => {
 
         // console.log(response.data.results);
         const trendingMoviesArray = response.data.results;
-        setTrendingMoviesArrea(trendingMoviesArray);
+        setTrendingMoviesArray(trendingMoviesArray);
 
       } catch (error) {
         console.error("Помилка при отриманні даних:", error);
@@ -32,7 +32,7 @@ const Home = () => {
     <main>
       <h1>Trending today</h1>
       <div>
-      {trendingMoviesArrea.map(movie => {
+      {trendingMoviesArray.map(movie => {
       return <Link key={movie.id} to={`${movie.id}`}>{movie.title}</Link> 
       })}
     </div>
