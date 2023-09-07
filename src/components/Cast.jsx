@@ -30,7 +30,11 @@ import { useParams } from "react-router-dom";
 
   return (<ul>
       {movieCast.length > 0 ? (
-        movieCast.map((actor) => <li key={actor.id}>{actor.name}</li>)
+      movieCast.map(({id, profile_path, name, character}) => <li key={id}>
+        <img src={profile_path && (`https://image.tmdb.org/t/p/w200/${profile_path}`)} alt="" />
+        <p>{name}</p>
+        <p>Character: {character}</p>
+      </li>)
       ) : (
         <li>No cast information available</li>
       )}
