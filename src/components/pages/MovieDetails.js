@@ -1,40 +1,39 @@
-// import { useEffect, useState } from "react";
-// import axios from "axios";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 
 const MovieDetails = () => {
 
 
-  const params = useParams();
-  console.log(params);
-  //  const [trendingMoviesArrea, setTrendingMoviesArrea] = useState([]);
+  const {movieId} = useParams();
+   const [movieDetails, setMovieDetails] = useState([]);
 
 
-  // useEffect(() => {
-  //  const fetchMovies = async () => {
+  useEffect(() => {
+   const fetchMovies = async () => {
 
-  //     try {
+      try {
    
-  //       const response = await axios.get("https://api.themoviedb.org/3/trending/movie/day?api_key=18e447cd4ab696665fa7fbc918675bb1");
+        const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US&api_key=18e447cd4ab696665fa7fbc918675bb1`);
 
-  //       console.log(response.data.results);
-  //       const trendingMoviesArray = response.data.results;
-  //       setTrendingMoviesArrea(trendingMoviesArray);
+        console.log(response.data);
+        const { title, release_date, poster_path, vote_average, overview, genres } = response.data;
+        
+        setMovieDetails(movieDetails);
 
-  //     } catch (error) {
-  //       console.error("Помилка при отриманні даних:", error);
-  //       throw error;
-  //     }
-  //   }
-  //   fetchMovies();
-  //   }, []);
+      } catch (error) {
+        console.error("Помилка при отриманні даних:", error);
+        throw error;
+      }
+    }
+    fetchMovies();
+    }, [movieId]);
 
 
 
   return (
     <main>
       <div>
-        MovieDetails
         <ul>
           <li>
             <Link to={`/movies/:movieId/cast`}>Cast</Link>
