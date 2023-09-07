@@ -17,7 +17,7 @@ const MovieDetails = () => {
         const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US&api_key=18e447cd4ab696665fa7fbc918675bb1`);
         const movieDetails = response.data;
         setMovieDetails(movieDetails);
-        // console.log(movieDetails)
+        console.log(movieDetails)
       } catch (error) {
         console.error("Помилка при отриманні даних:", error);
         throw error;
