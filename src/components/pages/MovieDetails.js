@@ -40,6 +40,7 @@ const MovieDetails = () => {
       <h3>Genres</h3>
       <ul>{genres.map(ganre => { return <li key={ganre.id} >{ganre.name}</li> })}</ul>
       <div>
+        <p>Additional information</p>
         <ul>
           <li>
             <Link to={`/movies/:movieId/cast`}>Cast</Link>
