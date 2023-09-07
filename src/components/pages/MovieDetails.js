@@ -6,7 +6,7 @@ const MovieDetails = () => {
 
 
   const {movieId} = useParams();
-   const [movieDetails, setMovieDetails] = useState([]);
+  const [movieDetails, setMovieDetails] = useState("");
 
 
   useEffect(() => {
@@ -15,10 +15,7 @@ const MovieDetails = () => {
       try {
    
         const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US&api_key=18e447cd4ab696665fa7fbc918675bb1`);
-
-        console.log(response.data);
-        const { title, release_date, poster_path, vote_average, overview, genres } = response.data;
-        
+        const movieDetails = response.data;
         setMovieDetails(movieDetails);
 
       } catch (error) {
@@ -27,12 +24,15 @@ const MovieDetails = () => {
       }
     }
     fetchMovies();
-    }, [movieId]);
+    }, [movieDetails, movieId]);
 
+        const { title, release_date, poster_path, vote_average, overview, genres } = movieDetails;
 
 
   return (
+    
     <main>
+      <h1>{title}</h1>
       <div>
         <ul>
           <li>
