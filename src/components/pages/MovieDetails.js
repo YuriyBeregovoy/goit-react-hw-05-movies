@@ -31,7 +31,7 @@ const MovieDetails = () => {
   return (
     
     <main>
-      <h1>{title}</h1>
+      <h1>{title} ({release_date.slice(0, 4)})</h1>
       <img src={`https://image.tmdb.org/t/p/w400/${poster_path}`} alt="" />
       <p>User Score: {Math.round(vote_average * 10)}%</p>
       <h2>Overview</h2>
