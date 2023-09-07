@@ -24,7 +24,7 @@ const Movies = () => {
    
           const response = await axios.get(`https://api.themoviedb.org/3/search/movie?query=${searchQuery}&include_adult=false&language=en-US&page=1&api_key=18e447cd4ab696665fa7fbc918675bb1`);
 
-          console.log(response.data.results);
+          // console.log(response.data.results);
           const searchMoviesArray = response.data.results;
           setSearchMoviesArray(searchMoviesArray);
 
