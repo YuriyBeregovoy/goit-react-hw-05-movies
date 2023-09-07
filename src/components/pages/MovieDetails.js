@@ -26,14 +26,14 @@ const MovieDetails = () => {
     fetchMovies();
     }, [movieId]);
 
-    const { title, release_date="", poster_path, vote_average, overview, genres=[]} = movieDetails;
+    const { title, release_date="", poster_path="", vote_average, overview, genres=[]} = movieDetails;
 
 
   return (
     
     <main>
       <h1>{title} ({release_date.slice(0, 4)})</h1>
-      <img src={`https://image.tmdb.org/t/p/w400/${poster_path}`} alt="" />
+      <img src={poster_path && (`https://image.tmdb.org/t/p/w400/${poster_path}`)} alt="" />
       <p>User Score: {Math.round(vote_average * 10)}%</p>
       <h2>Overview</h2>
       <p>{overview}</p>
