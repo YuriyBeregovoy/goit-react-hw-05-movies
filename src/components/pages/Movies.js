@@ -7,7 +7,7 @@ import { Link, useSearchParams } from "react-router-dom";
 const Movies = () => {
   const [searchMoviesArray, setSearchMoviesArray] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get("query");
+  const query = searchParams.get("query") ?? "";
 
 
   useEffect(() => {
@@ -34,7 +34,8 @@ const Movies = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-     const searchQuery = e.target.elements.query.value.trim();
+    const searchQuery = e.target.elements.query.value.trim();
+    if (searchQuery === "") { return setSearchParams({}); }
     setSearchParams({ query: searchQuery });
      e.target.reset();
   };
