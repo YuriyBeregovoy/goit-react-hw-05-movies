@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { AuthorReviewStyles, ReviewStyles } from "./Reviews.styled";
 
 
 
@@ -31,10 +32,10 @@ const Reviews = () => {
 
   return (<ul>
       {movieReviews.length > 0 ? (
-      movieReviews.map(({id, author, content}) => <li key={id}>
-        <p>Author: {author}</p>
+      movieReviews.map(({id, author, content}) => <ReviewStyles key={id}>
+        <AuthorReviewStyles>Author: {author}</AuthorReviewStyles>
         <p>{content}</p>
-      </li>)
+      </ReviewStyles>)
       ) : (
         <li>We don`t have any reviews for this movie.</li>
       )}
