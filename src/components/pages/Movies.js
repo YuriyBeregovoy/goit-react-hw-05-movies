@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { InputStyle, SearchForm } from "./Movies.styled";
 
 
 const Movies = () => {
@@ -44,10 +45,10 @@ const Movies = () => {
 
   return (
     <main>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="query" />
+      <SearchForm onSubmit={handleSubmit}>
+        <InputStyle type="text" name="query" placeholder="Search movies..."/>
         <button type="submit">Search</button>
-      </form>
+      </SearchForm>
        <ul>
         {searchMoviesArray.map(movie => {
         return <li key={movie.id}><Link to={`${movie.id}`} state={{ from: location }}>{movie.title}</Link></li> 
