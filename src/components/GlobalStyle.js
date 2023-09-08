@@ -34,6 +34,8 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  margin-bottom: 12px;
+   margin-top: 12px;
 }
 
 h1,
@@ -44,6 +46,15 @@ h5,
 h6,
 p {
   margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 ul {
