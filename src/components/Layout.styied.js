@@ -13,7 +13,7 @@ export const LayoutStyles = styled.div`
         margin-right: auto;
         margin-left: auto;
 
-  padding-bottom: 24px;
+  padding-bottom: 20px;
    align-items: center;
 
 
