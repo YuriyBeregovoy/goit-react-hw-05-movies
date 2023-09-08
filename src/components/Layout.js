@@ -1,12 +1,13 @@
 import { Suspense } from "react"
 import { NavLink, Outlet } from "react-router-dom"
+import { LayoutStyles } from "./Layout.styied"
 
 
 
 export const Layout = () => {
 
   return (
-    <div>
+    <LayoutStyles>
       <header>
           <nav>
             <NavLink to="/">Home</NavLink>
@@ -18,7 +19,7 @@ export const Layout = () => {
           <Outlet />
         </Suspense>
       </main>
-    </div>
+    </LayoutStyles>
     
 )
 
