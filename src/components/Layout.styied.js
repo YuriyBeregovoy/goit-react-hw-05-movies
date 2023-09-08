@@ -14,7 +14,6 @@ export const LayoutStyles = styled.div`
         margin-left: auto;
 
   padding-bottom: 24px;
-   align-items: center;
 
 
 `;
