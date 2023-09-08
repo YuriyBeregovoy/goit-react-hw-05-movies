@@ -6,8 +6,12 @@ import Cast from "./Cast";
 import Reviews from "./Reviews";
 import { Layout } from "./Layout";
 
-export const App = () => {
 
+
+
+
+
+export const App = () => {
 
   return (
           
