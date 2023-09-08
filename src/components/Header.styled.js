@@ -9,7 +9,7 @@ export const HeaderStyles = styled.header`
   position: sticky;
   z-index: 100;
   display: flex;
-  justify-content:flex-start;
+  justify-content:center;
 
   
   min-height: 64px;
@@ -37,5 +37,10 @@ padding: 8px 16px;
    
     background-color: orangered;
   }
+
+`;
+
+export const LinkNav = styled.nav`
+        max-width: 1158px;
 
 `;
