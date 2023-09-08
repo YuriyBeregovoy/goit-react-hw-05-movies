@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { Link, Outlet, useParams, useLocation } from "react-router-dom";
+import { Suspense } from "react";
 
 const MovieDetails = () => {
 
@@ -52,7 +53,9 @@ const MovieDetails = () => {
             <Link to="reviews">Reviews</Link>
           </li>
         </ul>
-        <Outlet/>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
       </div>
     </section>
   )
