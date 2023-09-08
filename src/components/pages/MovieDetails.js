@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { Link, Outlet, useParams, useLocation } from "react-router-dom";
 
@@ -8,6 +8,7 @@ const MovieDetails = () => {
   const {movieId} = useParams();
   const [movieDetails, setMovieDetails] = useState({});
   const location = useLocation();
+ const backLinkLocationRef = useRef(location.state?.from ?? "/movies");
 // console.log(location)
 
   useEffect(() => {
@@ -33,7 +34,7 @@ const MovieDetails = () => {
   return (
     
     <section>
-      <Link to={location.state?.from ?? "/movies"}>Go back</Link>
+      <Link to={backLinkLocationRef.current}>Go back</Link>
       <h1>{title} ({release_date.slice(0, 4)})</h1>
       <img src={poster_path && (`https://image.tmdb.org/t/p/w400/${poster_path}`)} alt="" />
       <p>User Score: {Math.round(vote_average * 10)}%</p>
