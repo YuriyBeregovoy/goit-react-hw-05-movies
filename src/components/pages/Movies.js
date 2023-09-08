@@ -1,14 +1,16 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 
 
 const Movies = () => {
   const [searchMoviesArray, setSearchMoviesArray] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("query") ?? "";
-
+  const location = useLocation();
+  // console.log(location);
+  
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -48,7 +50,7 @@ const Movies = () => {
       </form>
        <ul>
         {searchMoviesArray.map(movie => {
-        return <li key={movie.id}><Link to={`${movie.id}`}>{movie.title}</Link></li> 
+        return <li key={movie.id}><Link to={`${movie.id}`} state={{ from: location }}>{movie.title}</Link></li> 
         })}
       </ul>
     </main>
