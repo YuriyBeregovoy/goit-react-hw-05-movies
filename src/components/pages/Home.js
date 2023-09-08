@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 
 const Home = () => {
  const [trendingMoviesArray, setTrendingMoviesArray] = useState([]);
+  const location = useLocation();
 
 
   useEffect(() => {
@@ -33,7 +34,7 @@ const Home = () => {
       <h1>Trending today</h1>
       <ul>
       {trendingMoviesArray.map(movie => {
-      return <li key={movie.id}><Link to={`/movies/${movie.id}`} >{movie.title}</Link></li> 
+      return <li key={movie.id}><Link to={`/movies/${movie.id}`} state={{from: location}}>{movie.title}</Link></li> 
       })}
     </ul>
     </main>
