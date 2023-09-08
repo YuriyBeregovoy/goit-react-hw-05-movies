@@ -4,9 +4,9 @@ import styled from "styled-components";
 
   export const SearchForm = styled.form`
        display: flex;
-  align-items: center;
+       justify-content: flex-start;
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
   background-color: #fff;
   border-radius: 3px;
   overflow: hidden;
