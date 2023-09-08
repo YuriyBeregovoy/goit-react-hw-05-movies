@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { Link, Outlet, useParams, useLocation } from "react-router-dom";
 import { Suspense } from "react";
+import { DetailsLinkStyles } from "./MovieDetails.styled";
 
 const MovieDetails = () => {
 
@@ -43,7 +44,7 @@ const MovieDetails = () => {
       <p>{overview}</p>
       <h3>Genres</h3>
       <ul>{genres.map(ganre => { return <li key={ganre.id} >{ganre.name}</li> })}</ul>
-      <div>
+      <DetailsLinkStyles>
         <p>Additional information</p>
         <ul>
           <li>
@@ -56,7 +57,7 @@ const MovieDetails = () => {
         <Suspense fallback={<div>Loading...</div>}>
           <Outlet />
         </Suspense>
-      </div>
+      </DetailsLinkStyles>
     </section>
   )
 };
