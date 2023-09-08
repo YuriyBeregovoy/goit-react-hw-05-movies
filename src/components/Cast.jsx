@@ -17,7 +17,7 @@ import { useParams } from "react-router-dom";
         const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US&api_key=18e447cd4ab696665fa7fbc918675bb1`);
         const movieCast = response.data.cast;
         setMovieCast(movieCast);
-        console.log(movieCast);
+        // console.log(movieCast);
 
       } catch (error) {
         console.error("Помилка при отриманні даних:", error);
