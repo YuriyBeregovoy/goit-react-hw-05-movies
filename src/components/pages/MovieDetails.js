@@ -31,7 +31,7 @@ const MovieDetails = () => {
 
   return (
     
-    <main>
+    <section>
       <Link to="/">Go back</Link>
       <h1>{title} ({release_date.slice(0, 4)})</h1>
       <img src={poster_path && (`https://image.tmdb.org/t/p/w400/${poster_path}`)} alt="" />
@@ -52,7 +52,7 @@ const MovieDetails = () => {
         </ul>
         <Outlet/>
       </div>
-    </main>
+    </section>
   )
 };
 
