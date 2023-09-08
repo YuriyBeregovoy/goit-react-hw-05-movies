@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { Link, Outlet, useParams, useLocation } from "react-router-dom";
 import { Suspense } from "react";
-import { DetailsLinkStyles } from "./MovieDetails.styled";
+import { AdditionalInfoStyles, DetailsLinkStyles } from "./MovieDetails.styled";
 
 const MovieDetails = () => {
 
@@ -45,7 +45,7 @@ const MovieDetails = () => {
       <h3>Genres</h3>
       <ul>{genres.map(ganre => { return <li key={ganre.id} >{ganre.name}</li> })}</ul>
       <DetailsLinkStyles>
-        <p>Additional information</p>
+        <AdditionalInfoStyles>Additional information</AdditionalInfoStyles>
         <ul>
           <li>
             <Link to="cast">Cast</Link>
