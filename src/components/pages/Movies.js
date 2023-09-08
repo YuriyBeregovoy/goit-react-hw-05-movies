@@ -41,18 +41,14 @@ const Movies = () => {
 
   return (
     <main>
-     
       <form onSubmit={handleSubmit}>
         <input type="text" name="query" />
         <button type="submit">Search</button>
       </form>
-     
        <ul>
-          
         {searchMoviesArray.map(movie => {
         return <li key={movie.id}><Link to={`${movie.id}`}>{movie.title}</Link></li> 
         })}
-          
       </ul>
     </main>
   )
