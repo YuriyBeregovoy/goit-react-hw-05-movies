@@ -25,7 +25,7 @@ export const HeaderStyles = styled.header`
       
   `;
 
-export const LinkStyles = styled(NavLink)`
+export const LinkStylesHome = styled(NavLink)`
 gap: 20px;
 padding: 8px 16px;
   border-radius: 4px;
@@ -39,6 +39,22 @@ padding: 8px 16px;
   }
 
 `;
+
+export const LinkStylesMovies = styled(NavLink)`
+gap: 20px;
+padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+
+  &:focus, &:hover {
+   
+    background-color: orangered;
+  }
+
+`;
+
 
 export const LinkNav = styled.nav`
         max-width: 1158px;
