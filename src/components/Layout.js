@@ -1,7 +1,7 @@
 import { Suspense } from "react"
 import { Outlet } from "react-router-dom"
 import { HeaderStyles, LayoutStyles } from "./Layout.styied"
-import { LinkNav, LinkStyles } from "./Header.styled"
+import { LinkNav, LinkStylesMovies,  LinkStylesHome } from "./Header.styled"
 
 export const Layout = () => {
 
@@ -10,8 +10,8 @@ export const Layout = () => {
      <div>
         <HeaderStyles>
         <LinkNav>
-              <LinkStyles to="/">Home</LinkStyles>
-              <LinkStyles to="/movies">Movies</LinkStyles>
+              <LinkStylesHome to="/">Home</LinkStylesHome>
+              <LinkStylesMovies to="/movies">Movies</LinkStylesMovies>
           </LinkNav>
         </HeaderStyles>
       <LayoutStyles>
